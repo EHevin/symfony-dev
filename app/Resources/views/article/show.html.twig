@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Article</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ article.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ article.libelle }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ article.prix }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{article.category ? article.category.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a class="btn btn-light" href="{{ path('article_index') }}">Back to the list</a>
+    <a class="btn btn-info" href="{{ path('article_edit', { 'id': article.id }) }}">Edit</a>
+    {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Delete">
+    {{ form_end(delete_form) }}
+{% endblock %}
