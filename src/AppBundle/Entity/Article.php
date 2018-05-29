@@ -37,7 +37,7 @@ class Article
 
     /**
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="articles")
-     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=false)
      */
     private $category;
 
