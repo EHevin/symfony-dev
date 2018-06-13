@@ -29,7 +29,7 @@
                                     {{ app.user.username }}
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">Mon compte</a>
+                                    <a class="dropdown-item" href="{{ path('fos_user_profile_show') }}">Mon compte</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="{{ path('fos_user_security_logout') }}">
                                         {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
@@ -40,6 +40,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
+                            </li>
 
                         {% endif %}
 
@@ -48,7 +51,8 @@
             </nav>
         {% endblock %}
         {% block body %}
-
+        {% endblock %}
+        {% block fos_user_content %}
         {% endblock %}
         {% block javascripts %}
             <script type="text/javascript" src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
