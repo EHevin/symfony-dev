@@ -9,7 +9,26 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block navbar %}
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Espace admin</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('article_index') }}">Article</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('category_index') }}">Catégorie</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        {% endblock %}
+        {% block body %}
+        {% endblock %}
         {% block javascripts %}
             <script type="text/javascript" src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
             <script type="text/javascript" src="{{ asset('plugins/bootstrap/dist/js/bootstrap.min.js')}}"></script>
