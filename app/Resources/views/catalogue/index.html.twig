@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Catalogues list</h1>
+
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for catalogue in catalogues %}
+            <tr>
+                <td><a href="{{ path('catalogue_show', { 'id': catalogue.id }) }}">{{ catalogue.id }}</a></td>
+                <td>{{ catalogue.libelle }}</td>
+                <td>
+                    <a class="btn btn-light" href="{{ path('catalogue_show', { 'id': catalogue.id }) }}">show</a>
+                    <a class="btn btn-info" href="{{ path('catalogue_edit', { 'id': catalogue.id }) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-info" href="{{ path('catalogue_new') }}">Create a new catalogue</a>
+
+{% endblock %}

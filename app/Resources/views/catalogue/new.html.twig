@@ -1,0 +1,21 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">Créer un catalogue</h1>
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                        <button type="submit" value="Valider" class="btn btn-success">
+                            Valider
+                        </button>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+
+    <a class="btn btn-info" href="{{ path('catalogue_index') }}">Back to the list</a>
+
+{% endblock %}
