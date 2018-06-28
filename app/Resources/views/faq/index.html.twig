@@ -17,7 +17,7 @@
 
         {% for rub in rubs %}
             <tr>
-                <th colspan="5">{{ rub.libelle }}</th>
+                <th colspan="5">{{ rub.libelle }} <a class="btn btn-info" href="{{ path('rubrique_edit', { 'id': rub.id }) }}">edit</a></th>
 
             </tr>
         {% for faq in rub.faqs %}
