@@ -1,0 +1,21 @@
+<table class="table">
+    <tbody>
+    <tr>
+        <th>Rubrique</th>
+        <td>{{ faq.rubrique.libelle }}</td>
+    </tr>
+    <tr>
+        <th>Question</th>
+        <td>{{ faq.question }}</td>
+    </tr>
+    <tr>
+        <th>Reponse</th>
+        <td>{{ faq.reponse }}</td>
+    </tr>
+    <tr>
+        <th>Date</th>
+        <td>{% if faq.date %}{{ faq.date|date('Y-m-d') }}{% endif %}</td>
+    </tr>
+
+    </tbody>
+</table>

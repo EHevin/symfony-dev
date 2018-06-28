@@ -27,9 +27,22 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('catalogue_index') }}">Catalogue</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ path('listfaq_index') }}">F.A.Q</a>
+                            </li>
                             {% if is_granted("ROLE_ADMIN") %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ path('user_index') }}">Utilisateurs</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Gestion F.A.Q
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ path('rubrique_index') }}">Rubrique</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="{{ path('faq_index') }}">F.A.Q</a>
+                                    </div>
                                 </li>
                             {% endif %}
                             <li class="nav-item dropdown">
@@ -44,6 +57,7 @@
                                     </a>
                                 </div>
                             </li>
+
                         {% else %}
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
@@ -57,9 +71,9 @@
                     </ul>
                 </div>
             </nav>
+            <h1 class="text-center">Bienvenue sur ma super boutique</h1>
         {% endblock %}
         {% block index %}
-            <h1 class="text-center">Bienvenue sur ma super boutique</h1>
         {% endblock %}
         {% block body %}
         {% endblock %}

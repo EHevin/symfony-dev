@@ -1,28 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Category</h1>
+    <h1>Rubrique</h1>
 
     <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
-                <td>{{ category.id }}</td>
+                <td>{{ rubrique.id }}</td>
             </tr>
             <tr>
                 <th>Libelle</th>
-                <td>{{ category.libelle }}</td>
+                <td>{{ rubrique.libelle }}</td>
             </tr>
         </tbody>
     </table>
-
-    {% include 'article/liste_articles.html.twig' with {'articles' : category.articles}  %}
-
-    <a class="btn btn-light" href="{{ path('category_index') }}">Back to the list</a>
-    <a class="btn btn-info" href="{{ path('category_edit', { 'id': category.id }) }}">Edit</a>
+    <a class="btn btn-light" href="{{ path('rubrique_index') }}">Back to the list</a>
+    <a class="btn btn-info" href="{{ path('rubrique_edit', { 'id': rubrique.id }) }}">Edit</a>
     {{ form_start(delete_form) }}
         <input class="btn btn-danger" type="submit" value="Delete">
     {{ form_end(delete_form) }}
-
 
 {% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Faq</h1>
+
+    {% include 'faq/show_faq.html.twig' with {'faq' : faq}  %}
+    <a class="btn btn-light" href="{{ path('faq_index') }}">Back to the list</a>
+    <a class="btn btn-info" href="{{ path('faq_edit', { 'id': faq.id }) }}">Edit</a>
+    {{ form_start(delete_form) }}
+        <input class="btn btn-danger" type="submit" value="Delete">
+    {{ form_end(delete_form) }}
+{% endblock %}

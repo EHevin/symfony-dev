@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des rubriques</h1>
+
+
+        {% for rubrique in rubriques %}
+            <h2>{{ rubrique.libelle }}</h2>
+            <table class="table table-hover">
+                <thead class="thead-light">
+                <tr>
+                    <th>Question</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for faq in rubrique.faqs %}
+                    <tr>
+                        <td><a href="{{ path('listfaq_show', { 'id': faq.id }) }}">{{ faq.question }}</a></td>
+                        <td>{% if faq.date %}{{ faq.date|date('Y-m-d') }}{% endif %}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

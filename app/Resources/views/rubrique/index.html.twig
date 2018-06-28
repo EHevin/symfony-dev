@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des rubriques</h1>
+
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th>Id</th>
+                <th>Libelle</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rubrique in rubriques %}
+            <tr>
+                <td><a href="{{ path('rubrique_show', { 'id': rubrique.id }) }}">{{ rubrique.id }}</a></td>
+                <td>{{ rubrique.libelle }}</td>
+                <td>
+                    <a class="btn btn-light" href="{{ path('rubrique_show', { 'id': rubrique.id }) }}">show</a>
+                    <a class="btn btn-info" href="{{ path('rubrique_edit', { 'id': rubrique.id }) }}">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+     <a class="btn btn-info" href="{{ path('rubrique_new') }}">Create a new rubrique</a>
+{% endblock %}
